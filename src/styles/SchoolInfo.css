@@ -1,0 +1,46 @@
+.school-info {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  border-radius: 15px;
+  margin: 20px auto;
+  width: 85%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 1s ease-in-out;
+}
+
+.school-logo {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.school-info h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.school-info p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

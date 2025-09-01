@@ -1,0 +1,162 @@
+/* Overlay */
+/* Overlay: allow scroll if modal is tall */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 999;
+  overflow-y: auto; /* ✅ allow overlay to scroll */
+  padding: 20px; /* prevent modal from sticking to edges */
+}
+
+/* Wide modal */
+.modal-content.wide {
+  background: #fff;
+  border-radius: 15px;
+  width: 80%;
+  max-width: 1000px;
+  max-height: 90vh; /* ✅ limit height to viewport */
+  overflow-y: auto; /* ✅ scroll inside modal */
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease-in-out;
+}
+
+
+/* Close button */
+.modal-close {
+  position: absolute; top: 12px; right: 15px;
+  border: none; background: transparent;
+  font-size: 22px; cursor: pointer; color: #666;
+}
+.modal-close:hover { color: #ff4d4d; }
+
+/* Profile layout */
+.profile-container {
+  display: flex; gap: 30px;
+}
+.profile-left {
+  flex: 1; text-align: center;
+  border-right: 2px solid #eee;
+  padding-right: 20px;
+}
+.profile-photo-large {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 4px solid #007bff;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+.profile-left h2 { margin: 10px 0; color: #222; }
+
+/* Fee details */
+.profile-right {
+  flex: 2;
+}
+.fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+.fees-table th, .fees-table td {
+  padding: 10px; border: 1px solid #ddd; text-align: center;
+}
+.fees-table th {
+  background: #007bff; color: #fff;
+}
+.total-row { background: #f1f1f1; font-weight: bold; }
+
+/* Status buttons */
+.status-btn {
+  padding: 5px 10px; border: none;
+  border-radius: 6px; cursor: pointer; font-size: 0.9rem;
+}
+.status-btn.paid { background: #28a745; color: #fff; }
+.status-btn.unpaid { background: #dc3545; color: #fff; }
+
+/* Attendance section */
+.attendance-section {
+  margin-top: 30px;
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+}
+.attendance-section ul {
+  list-style: none; padding: 0;
+}
+.attendance-section li {
+  margin: 5px 0; font-size: 0.95rem;
+}
+.att-status.present { color: green; font-weight: bold; }
+.att-status.absent { color: red; font-weight: bold; }
+
+/* Attendance buttons */
+.attendance-buttons {
+  margin-top: 15px; display: flex; gap: 10px;
+}
+.att-btn {
+  padding: 8px 15px;
+  border: none; border-radius: 6px;
+  font-size: 0.95rem; cursor: pointer;
+}
+.att-btn.present { background: #28a745; color: #fff; }
+.att-btn.absent { background: #dc3545; color: #fff; }
+
+/* Fee table hover */
+.fees-table tr:hover {
+  background: #f9f9f9;
+  transition: 0.3s;
+}
+
+/* Attendance Pie Chart container */
+.attendance-section .recharts-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* Today’s marking */
+.today-marking {
+  text-align: center;
+  margin-top: 25px;
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.attendance-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 10px auto;
+  display: block;
+  border: 6px solid transparent;
+  transition: border-color 0.3s ease, transform 0.2s ease;
+}
+.attendance-photo:hover {
+  transform: scale(1.05);
+}
+.attendance-photo.present { border-color: #28a745; }
+.attendance-photo.late { border-color: #ffc107; }
+.attendance-photo.absent { border-color: #dc3545; }
+
+.status-display {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 8px;
+}
+.status-display span.present { color: #28a745; }
+.status-display span.late { color: #ffc107; }
+.status-display span.absent { color: #dc3545; }
+
+
+/* Animation */
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
